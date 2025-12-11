@@ -130,6 +130,11 @@ Available Commands:
   - __go_parse 还有必要存在吗？bake内部都加上前缀是不是就可以了
   - 用 `exec "$@"` 执行目标命令
   - @cmd 这种没参数的标出下面一个函数是cmd？这样不知道能实现不
+- v2
+  - 提供install_sha范例，要考虑github下载失败的处理
+  - FIXME 命令的执行应该通过`sha some_cmd`,当前这样执行第二次有bug
+  - 命令列表的顺序是乱序的，貌似declare -F xxx 获取的顺序是乱序,需要用sort -n 命令排序?
+  
 
 ## bug
 
