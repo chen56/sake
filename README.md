@@ -134,7 +134,9 @@ Available Commands:
   - 提供install_sha范例，要考虑github下载失败的处理
   - FIXME 命令的执行应该通过`sha some_cmd`,当前这样执行第二次有bug
   - 命令列表的顺序是乱序的，貌似declare -F xxx 获取的顺序是乱序,需要用sort -n 命令排序?
-  
+  - 当前这种层级模式的命令很容易造成同名干扰 比如 pkg/rm 会覆盖系统rm命令，需要command rm才能正常
+    - 解决方案：用某种全局函数名: pkg.rm, 可嵌套也可以不嵌套，看使用习惯, 可以定一个分隔符: SHA_CMD_SEPARATOR="."
+
 
 ## bug
 
