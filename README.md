@@ -136,6 +136,7 @@ Available Commands:
   - 命令列表的顺序是乱序的，貌似declare -F xxx 获取的顺序是乱序,需要用sort -n 命令排序?
   - 当前这种层级模式的命令很容易造成同名干扰 比如 pkg/rm 会覆盖系统rm命令，需要command rm才能正常
     - 解决方案：用某种全局函数名: pkg.rm, 可嵌套也可以不嵌套，看使用习惯, 可以定一个分隔符: SHA_CMD_SEPARATOR="."
+  - 下划线等私有方法可以注册并执行，但不暴露，可以调用，方便调试，比如: _test_colors
 
 
 ## bug
